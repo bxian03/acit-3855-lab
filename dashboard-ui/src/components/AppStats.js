@@ -8,7 +8,7 @@ export default function AppStats() {
 
 	const getStats = () => {
 	
-        fetch(`acit-3855-docker.eastus.cloudapp.azure.com:8100/stats`)
+        fetch(`http://acit-3855-docker.eastus.cloudapp.azure.com:8100/stats`)
             .then(res => res.json())
             .then((result)=>{
 				console.log("Received Stats")
@@ -35,24 +35,20 @@ export default function AppStats() {
                 <table className={"StatsTable"}>
 					<tbody>
 						<tr>
-							<th>Blood Pressure</th>
-							<th>Heart Rate</th>
-						</tr>
-						<tr>
 							<td># order_count: {stats['order_count']}</td>
                             <td># pizza_count: {stats['pizza_count']}</td>
 						</tr>
 						<tr>
-							<td colspan="2">order_mean_cost: {stats['order_mean_cost']}</td>
+							<td colSpan="2">order_mean_cost: {stats['order_mean_cost']}</td>
 						</tr>
 						<tr>
-							<td colspan="2">order_mean_quantity: {stats['order_mean_quantity']}</td>
+							<td colSpan="2">order_mean_quantity: {stats['order_mean_quantity']}</td>
 						</tr>
 						<tr>
-							<td colspan="2">pizza_mean_cost: {stats['pizza_mean_cost']}</td>
+							<td colSpan="2">pizza_mean_cost: {stats['pizza_mean_cost']}</td>
 						</tr>
                         <tr>
-                            <td colspan="2">pizza_mean_quantity: {stats['pizza_mean_quantity']}</td>
+                            <td colSpan="2">pizza_mean_quantity: {stats['pizza_mean_quantity']}</td>
                         </tr>
 					</tbody>
                 </table>
